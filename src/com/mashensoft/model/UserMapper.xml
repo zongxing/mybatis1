@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashensoft.model.UserMapper">
+	<resultMap type="com.mashensoft.model.User" id="UserResult">
+		<id property="id" column="id" />
+		<result property="username" column="username" />
+		<result property="password" column="password" />
+	</resultMap>
+	<select id="findAllUsers" resultMap="UserResult">
+		SELECT * FROM user
+	</select>
+<!-- 	<select id="findStudentById" parameterType="int" -->
+<!-- 		resultType="Student"> -->
+<!-- 		SELECT STUD_ID AS STUDID, NAME, EMAIL, DOB -->
+<!-- 		FROM STUDENTS WHERE STUD_ID=#{Id} -->
+<!-- 	</select> -->
+<!-- 	<insert id="insertStudent" parameterType="Student"> -->
+<!-- 		INSERT INTO STUDENTS(STUD_ID,NAME,EMAIL,DOB) -->
+<!-- 		VALUES(#{studId },#{name},#{email},#{dob}) -->
+<!-- 	</insert> -->
+</mapper>
